@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # with:
-          # path: . # 만약 프로젝트가 루트 폴더가 아니라면 경로를 지정하세요.
+        with:
+          node-version: 22
 
   deploy:
     needs: build
