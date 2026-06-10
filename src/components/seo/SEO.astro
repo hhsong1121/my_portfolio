@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-	title = 'Hyeonghun Song | Medical Student & AI Researcher',
-	description = 'Medical Scientist Who Bridges Clinical Insights with Data Science & AI. Portfolio of Hyeonghun Song (송형훈) — publications, awards, and AI research projects.',
+	title = 'Hyeonghun Song | Medical Doctor & Data Scientist',
+	description = 'Medical Scientist Who Bridges Clinical Insights with Data Science & AI. Portfolio of Hyeonghun Song (송형훈) — publications, academics, and AI research projects.',
 	image = '/images/og-thumbnail.svg',
 	url = Astro.site?.href ?? 'https://hhsong1121.github.io/my_portfolio/',
 } = Astro.props;
@@ -24,7 +24,7 @@ const imageUrl = new URL(image.startsWith('/') ? image.slice(1) : image, Astro.s
 <!-- 기본 SEO 메타 태그 -->
 <meta name="description" content={description} />
 <meta name="author" content="Hyeonghun Song" />
-<meta name="keywords" content="Hyeonghun Song, 송형훈, Medical AI, Clinical Decision Support, Machine Learning, Publications" />
+<meta name="keywords" content="Hyeonghun Song, 송형훈, Medical Doctor, Data Scientist, Medical AI, Clinical Decision Support, Machine Learning, Publications" />
 <link rel="canonical" href={url} />
 
 <!-- Open Graph (Facebook, LinkedIn 등 소셜 공유) -->
