@@ -1,0 +1,119 @@
+---
+/**
+ * Hero / Profile Section
+ * ── 첫 화면: 이름, 직책, 소개, 관심 분야, 학력, 경력, CV 다운로드 ──
+ */
+import Icon from '../icons/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const interests = [
+	'Cardiovascular and Thoracic Surgery',
+	'Computer Vision-Language Model',
+	'Machine Learning',
+];
+
+const education = [
+	{
+		degree: 'M.S. Candidate in Medicine',
+		institution: 'Korea University College of Medicine',
+		period: 'Sep 2027 – Present',
+	},
+	{
+		degree: 'B.S. in Medicine',
+		institution: 'Korea University College of Medicine',
+		period: 'March 2019 – August 2026',
+	},
+];
+
+const experience = [
+	{
+		role: 'Medical Intern',
+		institution: 'Korea University Guro Hospital',
+		period: 'Sep 2026 – Present',
+	},
+];
+---
+
+<section id="profile" class="relative overflow-hidden bg-surface">
+	<div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy-50/60 to-transparent" aria-hidden="true" />
+
+	<div class="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+		<div class="flex flex-col items-center text-center">
+			<p class="mb-3 text-sm font-medium uppercase tracking-widest text-navy-600">
+				Medical Student &amp; AI Researcher
+			</p>
+			<h1 class="text-4xl font-bold tracking-tight text-navy-950 sm:text-5xl lg:text-6xl">
+				Hyeonghun Song
+			</h1>
+			<p class="mt-2 text-lg text-ink-muted">송형훈</p>
+
+			<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted sm:text-xl">
+				Medical Scientist Who Bridges Clinical Insights with Data Science &amp; AI
+			</p>
+
+			<a
+				href={`${base}resume-public.pdf`}
+				download="Hyeonghun_Song_CV.pdf"
+				class="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-800 px-7 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-navy-700 hover:shadow-lg"
+			>
+				<Icon name="download" class="h-4 w-4" />
+				Download CV
+			</a>
+
+			<div class="mt-14 w-full max-w-3xl">
+				<div class="mb-4 flex items-center justify-center gap-2 text-navy-700">
+					<Icon name="sparkles" class="h-4 w-4" />
+					<h2 class="text-sm font-semibold uppercase tracking-wider">Research Interests</h2>
+				</div>
+				<div class="flex flex-wrap justify-center gap-2">
+					{
+						interests.map((item) => (
+							<span class="rounded-full border border-navy-200 bg-white px-4 py-1.5 text-sm text-navy-800">
+								{item}
+							</span>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="mt-12 grid w-full max-w-3xl gap-8 text-left sm:grid-cols-2">
+				<div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
+					<div class="mb-4 flex items-center gap-2 text-navy-800">
+						<Icon name="graduation-cap" class="h-5 w-5" />
+						<h3 class="font-semibold">Education</h3>
+					</div>
+					<ul class="space-y-4">
+						{
+							education.map((item) => (
+								<li class="border-l-2 border-navy-200 pl-4">
+									<p class="font-medium text-ink">{item.degree}</p>
+									<p class="text-sm text-ink-muted">{item.institution}</p>
+									<p class="text-xs text-navy-500">{item.period}</p>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+
+				<div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
+					<div class="mb-4 flex items-center gap-2 text-navy-800">
+						<Icon name="briefcase" class="h-5 w-5" />
+						<h3 class="font-semibold">Experience</h3>
+					</div>
+					<ul class="space-y-4">
+						{
+							experience.map((item) => (
+								<li class="border-l-2 border-navy-200 pl-4">
+									<p class="font-medium text-ink">{item.role}</p>
+									<p class="text-sm text-ink-muted">{item.institution}</p>
+									<p class="text-xs text-navy-500">{item.period}</p>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

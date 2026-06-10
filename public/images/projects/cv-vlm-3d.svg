@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none">
+  <rect width="400" height="225" fill="#f0f4f8"/>
+  <ellipse cx="200" cy="110" rx="90" ry="70" fill="#bcccdc"/>
+  <ellipse cx="200" cy="110" rx="60" ry="45" fill="#486581"/>
+  <ellipse cx="200" cy="110" rx="30" ry="22" fill="#102a43"/>
+  <rect x="60" y="160" width="280" height="30" rx="6" fill="#334e68" opacity="0.6"/>
+  <text x="200" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#334e68" font-weight="600">CV-VLM 3D Imaging</text>
+</svg>

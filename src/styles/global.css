@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+/* ── Portfolio 전역 테마: 네이비 블루 포인트 + 오프화이트 배경 ── */
+@theme {
+	--color-navy-50: #f0f4f8;
+	--color-navy-100: #d9e2ec;
+	--color-navy-200: #bcccdc;
+	--color-navy-300: #9fb3c8;
+	--color-navy-400: #829ab1;
+	--color-navy-500: #627d98;
+	--color-navy-600: #486581;
+	--color-navy-700: #334e68;
+	--color-navy-800: #243b53;
+	--color-navy-900: #102a43;
+	--color-navy-950: #0a1929;
+
+	--color-surface: #fafbfc;
+	--color-surface-elevated: #ffffff;
+	--color-ink: #1a202c;
+	--color-ink-muted: #4a5568;
+}
+
+/* ── Smooth Scroll: 네비게이션 앵커 클릭 시 부드러운 스크롤 ── */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-surface text-ink antialiased;
+}
+
+/* ── 섹션 공통: 스티키 헤더 높이만큼 앵커 오프셋 ── */
+section[id] {
+	scroll-margin-top: 5rem;
+}

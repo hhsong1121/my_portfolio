@@ -1,0 +1,46 @@
+---
+/**
+ * SEO & Open Graph 컴포넌트
+ * ── <head> 영역: 검색엔진 최적화 및 소셜 공유 썸네일 설정 ──
+ */
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	url?: string;
+}
+
+const {
+	title = 'Hyeonghun Song | Medical Student & AI Researcher',
+	description = 'Medical Scientist Who Bridges Clinical Insights with Data Science & AI. Portfolio of Hyeonghun Song (송형훈) — publications, awards, and AI research projects.',
+	image = '/images/og-thumbnail.svg',
+	url = Astro.site?.href ?? 'https://hhsong1121.github.io/my_portfolio/',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const imageUrl = new URL(image.startsWith('/') ? image.slice(1) : image, Astro.site ?? url).href;
+---
+
+<!-- 기본 SEO 메타 태그 -->
+<meta name="description" content={description} />
+<meta name="author" content="Hyeonghun Song" />
+<meta name="keywords" content="Hyeonghun Song, 송형훈, Medical AI, Clinical Decision Support, Machine Learning, Publications" />
+<link rel="canonical" href={url} />
+
+<!-- Open Graph (Facebook, LinkedIn 등 소셜 공유) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content="Hyeonghun Song Portfolio" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- 파비콘 -->
+<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />

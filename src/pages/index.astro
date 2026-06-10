@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
+/**
+ * Homepage
+ * ── 원페이지 포트폴리오: Profile → Skills → Publications → Awards → Projects ──
+ */
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from '../components/sections/Hero.astro';
+import Skills from '../components/sections/Skills.astro';
+import PublicationsSection from '../components/sections/PublicationsSection.astro';
+import AwardsSection from '../components/sections/AwardsSection.astro';
+import ProjectsSection from '../components/sections/ProjectsSection.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Hyeonghun Song | Medical Student & AI Researcher"
+	description="Medical Scientist Who Bridges Clinical Insights with Data Science & AI. Portfolio of Hyeonghun Song (송형훈)."
+>
+	<Hero />
+	<Skills />
+	<PublicationsSection />
+	<AwardsSection />
+	<ProjectsSection />
 </Layout>

@@ -1,0 +1,103 @@
+---
+/**
+ * Sticky Header & Navigation
+ * ── 상단 고정 네비게이션 바 + 모바일 햄버거 메뉴 ──
+ */
+const navItems = [
+	{ label: 'Profile', href: '#profile' },
+	{ label: 'Publications', href: '#publications' },
+	{ label: 'Awards', href: '#awards' },
+	{ label: 'Projects', href: '#projects' },
+];
+---
+
+<header
+	id="site-header"
+	class="sticky top-0 z-50 border-b border-navy-100/80 bg-surface-elevated/90 backdrop-blur-md"
+>
+	<nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+		<!-- 로고 / 이름 -->
+		<a
+			href="#profile"
+			class="text-lg font-semibold tracking-tight text-navy-900 transition-colors hover:text-navy-700"
+		>
+			H. Song
+		</a>
+
+		<!-- 데스크톱 메뉴 -->
+		<ul class="hidden items-center gap-8 md:flex">
+			{
+				navItems.map((item) => (
+					<li>
+						<a
+							href={item.href}
+							class="text-sm font-medium text-ink-muted transition-colors hover:text-navy-800"
+						>
+							{item.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<!-- 모바일 햄버거 버튼 -->
+		<button
+			id="mobile-menu-btn"
+			type="button"
+			class="inline-flex items-center justify-center rounded-lg p-2 text-navy-800 transition-colors hover:bg-navy-50 md:hidden"
+			aria-label="Open navigation menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+		>
+			<svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+			<svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+		</button>
+	</nav>
+
+	<!-- 모바일 드롭다운 메뉴 -->
+	<div
+		id="mobile-menu"
+		class="hidden border-t border-navy-100 bg-surface-elevated md:hidden"
+	>
+		<ul class="flex flex-col px-4 py-3">
+			{
+				navItems.map((item) => (
+					<li>
+						<a
+							href={item.href}
+							class="mobile-nav-link block rounded-lg px-3 py-3 text-sm font-medium text-ink-muted transition-colors hover:bg-navy-50 hover:text-navy-800"
+						>
+							{item.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</header>
+
+<script>
+	/** 모바일 햄버거 메뉴 토글 로직 */
+	const menuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const iconOpen = document.getElementById('menu-icon-open');
+	const iconClose = document.getElementById('menu-icon-close');
+
+	function setMenuOpen(open: boolean) {
+		mobileMenu?.classList.toggle('hidden', !open);
+		iconOpen?.classList.toggle('hidden', open);
+		iconClose?.classList.toggle('hidden', !open);
+		menuBtn?.setAttribute('aria-expanded', String(open));
+		menuBtn?.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+	}
+
+	menuBtn?.addEventListener('click', () => {
+		const isOpen = mobileMenu?.classList.contains('hidden') === false;
+		setMenuOpen(!isOpen);
+	});
+
+	/* 앵커 클릭 시 모바일 메뉴 자동 닫기 */
+	document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+		link.addEventListener('click', () => setMenuOpen(false));
+	});
+</script>
