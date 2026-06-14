@@ -17,13 +17,12 @@ This demo project aimed to develop a clinical decision support system that helps
 
 ## System pipeline
 
-```mermaid
-flowchart LR
-    FE[Streamlit Frontend] --> API[FastAPI server.py]
-    API --> Rules[logic_lobectomy.py]
-    API --> CXR[ai_engine.py NIH Grad-CAM]
-    API --> Demo[demo_assets.py snippets and template briefing]
-```
+| Component | Demo behavior |
+|-----------|---------------|
+| **Rule engine**| Live lobectomy chest-tube logic |
+| **NIH CXR + Grad-CAM** | Live (public pretrained weights via torchxrayvision) |
+| **Guideline evidence** | Paraphrased demo snippets (no PDFs or vector DB) |
+| **Agent insight** | Template briefing (no local SLM) |
 
 ## Disclaimer
 - This repository is provided for research and portfolio demonstration only. **It is not intended for clinical diagnosis, treatment, or decision-making** without independent validation and appropriate regulatory review.
