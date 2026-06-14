@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none">
-  <rect width="400" height="225" fill="#f0f4f8"/>
-  <rect x="40" y="50" width="120" height="80" rx="8" fill="#334e68"/>
-  <rect x="180" y="50" width="80" height="80" rx="8" fill="#486581"/>
-  <rect x="280" y="50" width="80" height="80" rx="8" fill="#627d98"/>
-  <path d="M100 130 L200 130 L240 170 L60 170 Z" fill="#102a43" opacity="0.8"/>
-  <text x="200" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#334e68" font-weight="600">Thoracic CDSS</text>
-</svg>

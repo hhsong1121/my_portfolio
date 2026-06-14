@@ -2,7 +2,6 @@
 title: "임상 데이터 통계 분석 파이프라인"
 description: "PSM, IPTW 기반 인과 추론 및 생존 분석 자동화 파이프라인"
 tags: ["R", "PSM", "IPTW", "Survival Analysis"]
-thumbnail: "/images/projects/clinical-stats.svg"
 order: 3
 ---
 

@@ -2,7 +2,6 @@
 title: "Computer vision-language model"
 description: "3D 의료 영상 처리를 위한 멀티모달 비전-언어 모델 파이프라인"
 tags: ["Computer Vision", "VLM", "MONAI", "3D CT"]
-thumbnail: "/images/projects/cv-vlm-3d.svg"
 order: 2
 ---
 
